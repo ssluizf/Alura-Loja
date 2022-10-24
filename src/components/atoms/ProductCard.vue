@@ -28,7 +28,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-  * {
-    @apply mb-1
-  }
+
 </style>

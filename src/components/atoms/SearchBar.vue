@@ -3,19 +3,19 @@
     <input class="text-black-400 outline-none w-full leading-4 text-sm bg-transparent ml-4 mr-1"
       placeholder="O que deseja encontrar?" />
     <div class="mr-4">
-      <SearchIcon class="text-black-400" />
+      <MagnifyIcon class="text-black-400" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import SearchIcon from "../../assets/search.svg?inline";
+import MagnifyIcon from 'vue-material-design-icons/Magnify.vue';
 
 export default defineComponent({
   name: 'SearchBar',
   components: {
-    SearchIcon
+    MagnifyIcon
   }
 })
 </script>

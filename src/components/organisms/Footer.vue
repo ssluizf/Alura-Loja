@@ -3,7 +3,9 @@
     <ContainerDefault class="md:py-8 lg:py-16">
       <div class="grid md:grid-cols-[0.4fr_0.6fr] lg:grid-cols-2">
         <div class="grid justify-center md:justify-start lg:grid-cols-2">
-          <LogoIcon class="w-44 mb-4" />
+          <RouterLink to="/">
+            <LogoIcon class="w-44 mb-4" />
+          </RouterLink>
           <div class="flex flex-col space-y-4 mb-8 text-center text-black md:text-left md:space-y-6 md:mb-0">
             <a href="">
               Quem somos nós
@@ -42,6 +44,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { RouterLink } from "vue-router"
 import LogoIcon from "../../assets/logo.svg?inline";
 import ButtonDefault from '../atoms/ButtonDefault.vue';
 import ContainerDefault from '../atoms/ContainerDefault.vue';
@@ -50,6 +53,7 @@ import Input from '../atoms/Input.vue';
 export default defineComponent({
   name: 'Footer',
   components: {
+    RouterLink,
     LogoIcon,
     ButtonDefault,
     ContainerDefault,

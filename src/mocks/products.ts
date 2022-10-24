@@ -1,25 +1,26 @@
 import product1 from "../assets/product-01.png"
-import product2 from "../assets/product-02.png"
-import product3 from "../assets/product-03.png"
+import product2 from "../assets/product-02.jpg"
+import product3 from "../assets/product-03.jpg"
 import product4 from "../assets/product-04.png"
 import product5 from "../assets/product-05.png"
-import product6 from "../assets/product-06.png"
-import product7 from "../assets/product-07.png"
-import product8 from "../assets/product-08.png"
-import product9 from "../assets/product-09.png"
-import product10 from "../assets/product-10.png"
-import product11 from "../assets/product-11.png"
-import product12 from "../assets/product-12.png"
-import product13 from "../assets/product-13.png"
-import product14 from "../assets/product-14.png"
-import product15 from "../assets/product-15.png"
-import product16 from "../assets/product-16.png"
-import product17 from "../assets/product-17.png"
-import product18 from "../assets/product-18.png"
+import product6 from "../assets/product-06.jpg"
+import product7 from "../assets/product-07.jpg"
+import product8 from "../assets/product-08.jpg"
+import product9 from "../assets/product-09.jpg"
+import product10 from "../assets/product-10.jpg"
+import product11 from "../assets/product-11.jpg"
+import product12 from "../assets/product-12.jpg"
+import product13 from "../assets/product-13.jpg"
+import product14 from "../assets/product-14.jpg"
+import product15 from "../assets/product-15.jpg"
+import product16 from "../assets/product-16.jpg"
+import product17 from "../assets/product-17.jpg"
+import product18 from "../assets/product-18.jpg"
 
-interface ProductType {
-  id: number,
+export interface ProductType {
+  id: string,
   title: string,
+  description: String,
   price: number,
   imgUrl: string,
   categoryId: number
@@ -27,127 +28,145 @@ interface ProductType {
 
 const products: ProductType[] = [
   {
-    id: 1,
+    id: "0000001",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product1,
     categoryId: 1
   },
   {
-    id: 2,
+    id: "0000002",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product2,
     categoryId: 1
   },
   {
-    id: 3,
+    id: "0000003",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product3,
     categoryId: 1
   },
   {
-    id: 4,
+    id: "0000004",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product4,
     categoryId: 1
   },
   {
-    id: 5,
+    id: "0000005",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product5,
     categoryId: 1
   },
   {
-    id: 6,
+    id: "0000006",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product6,
     categoryId: 1
   },
   {
-    id: 7,
+    id: "0000007",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product7,
     categoryId: 2
   },
   {
-    id: 8,
+    id: "0000008",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product8,
     categoryId: 2
   },
   {
-    id: 9,
+    id: "0000009",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product9,
     categoryId: 2
   },
   {
-    id: 10,
+    id: "0000010",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product10,
     categoryId: 2
   },
   {
-    id: 11,
+    id: "0000011",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product11,
     categoryId: 2
   },
   {
-    id: 12,
+    id: "0000012",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product12,
     categoryId: 2
   },
   {
-    id: 13,
+    id: "0000013",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product13,
     categoryId: 3
   },
   {
-    id: 14,
+    id: "0000014",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product14,
     categoryId: 3
   },
   {
-    id: 15,
+    id: "0000015",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product15,
     categoryId: 3
   },
   {
-    id: 16,
+    id: "0000016",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product16,
     categoryId: 3
   },
   {
-    id: 17,
+    id: "0000017",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product17,
     categoryId: 3
   },
   {
-    id: 18,
+    id: "0000018",
     title: "Produto XYZ",
+    description: "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
     price: 60,
     imgUrl: product18,
     categoryId: 3

@@ -1,11 +1,9 @@
 <template>
   <MainApp>
-    <div class="bg-black-25">
-      <Banner :title="banner.title" :description="banner.description" :btnLabel="banner.btnLabel"
-        :image="banner.image" />
-      <div v-for="category in categories" :key="category.id">
-        <ProductSection :title="category.title" :categoryId="category.id" />
-      </div>
+    <Banner :title="banner.title" :description="banner.description" :btnLabel="banner.btnLabel"
+      :image="banner.image" />
+    <div class="mt-16" v-for="category in categories" :key="category.id">
+      <ProductSection :title="category.title" :categoryId="category.id" />
     </div>
   </MainApp>
 </template>

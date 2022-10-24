@@ -17,7 +17,7 @@ import ButtonDefault from '../atoms/ButtonDefault.vue';
 import ContainerDefault from '../atoms/ContainerDefault.vue';
 
 export default defineComponent({
-  name: 'SearchBar',
+  name: 'Banner',
   props: {
     title: String,
     description: String,

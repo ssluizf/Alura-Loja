@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import ProductCard from "./ProductCard.vue";
+import ProductCardEditable from "./ProductCardEditable.vue";
 import convertCurrency from '../../utils/convertCurrency'
 
 const productTest = {
@@ -11,7 +11,7 @@ const productTest = {
 }
 
 test("displays title", () => {
-  const wrapper = mount(ProductCard, {
+  const wrapper = mount(ProductCardEditable, {
     props: {
       product: productTest
     },
@@ -21,11 +21,21 @@ test("displays title", () => {
 });
 
 test("displays price", () => {
-  const wrapper = mount(ProductCard, {
+  const wrapper = mount(ProductCardEditable, {
     props: {
       product: productTest
     },
   });
 
   expect(wrapper.text()).toContain(convertCurrency(productTest.price));
+});
+
+test("displays id", () => {
+  const wrapper = mount(ProductCardEditable, {
+    props: {
+      product: productTest
+    },
+  });
+
+  expect(wrapper.text()).toContain("#" + productTest.id);
 });

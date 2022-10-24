@@ -1,7 +1,9 @@
 <template>
   <div>
     <TopBar />
-    <slot />
+    <div class="bg-black-25 text-black">
+      <slot />
+    </div>
     <Footer />
   </div>
 </template>

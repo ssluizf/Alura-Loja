@@ -1,6 +1,6 @@
 <template>
   <div class="relative w-full bg-white rounded-md">
-    <div class="flex flex-col px-3 py-2">
+    <div class="flex flex-col px-3 py-2" :class="class">
       <label class="text-xs text-black-400">{{ label }}</label>
       <textarea v-if="variant === 'textarea'" id="field-textarea"
         class="w-full h-16 text-base text-black outline-none resize-none" :placeholder="placeholder" />
@@ -12,25 +12,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import SearchIcon from "../../assets/search.svg?inline";
+import { defineComponent, PropType } from 'vue';
 
 export default defineComponent({
-  name: 'SearchBar',
+  name: 'Input',
   props: {
     label: String,
     placeholder: String,
     variant: {
-      type: String,
+      type: String as PropType<"input" | "textarea">,
       default: "input",
-      validator(value: string) {
-        return ["input", "textarea"].includes(value);
-      },
     },
+    class: String
   },
-  components: {
-    SearchIcon
-  }
 })
 </script>
 

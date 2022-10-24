@@ -1,46 +1,57 @@
 <template>
-  <div class="list-container grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6">
-    <div v-for="product in products" :key="product.id">
-      <ProductCard :product="product" />
+  <div class="grid gap-4 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 lg:gap-y-16" :class="!showAll && 'list-container'">
+    <div v-for="product in getProducts(categoryId)" :key="product.id">
+      <ProductCardEditable v-if="editable" :product="product" />
+      <ProductCard v-else :product="product" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import ProductCard from '../atoms/ProductCard.vue';
-import { useStore } from '../../store/index';
+import { mapGetters } from 'vuex'
+import ProductCard from '../atoms/ProductCard.vue'
+import ProductCardEditable from '../atoms/ProductCardEditable.vue'
 
 export default defineComponent({
-  name: 'ProductSection',
-  setup(props) {
-    const store = useStore();
-    const products = store.getters.getProductsByCategoryId(props.categoryId)
+  name: 'ProductList',
+  computed: mapGetters(['getProductsByCategoryId', 'getAllProducts']),
+  methods: {
+    getProducts(categoryId: any) {
+      let products = [];
 
-    return {
-      products
+      if (categoryId) {
+        products = this.getProductsByCategoryId(categoryId)
+      } else {
+        products = this.getAllProducts()
+      }
+
+      return products
     }
   },
   props: {
-    categoryId: Number
+    categoryId: Number,
+    editable: Boolean,
+    showAll: Boolean
   },
   components: {
-    ProductCard
+    ProductCard,
+    ProductCardEditable
   }
 })
 </script>
 
 <style>
-.list-container > div {
+.list-container>div {
   display: none;
 }
 
-.list-container > div:nth-child(-n+4) {
+.list-container>div:nth-child(-n+4) {
   display: block;
 }
 
 @media (min-width: 992px) {
-  .list-container > div:nth-child(-n+6) {
+  .list-container>div:nth-child(-n+6) {
     display: block;
   }
 }
