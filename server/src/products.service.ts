@@ -14,10 +14,18 @@ export class ProductsService {
     return this.productModel.findAll();
   }
 
-  async getByCategoryGroup(categoryId: number): Promise<Product[]> {
+  async getByCategory(categoryId: number): Promise<Product[]> {
     return this.productModel.findAll({
       where: {
         categoryId
+      }
+    });
+  }
+
+  async getByFilter(filter: string): Promise<Product[]> {
+    return this.productModel.findAll({
+      where: {
+        title: filter
       }
     });
   }

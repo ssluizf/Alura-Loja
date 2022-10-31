@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Query, Post } from '@nestjs/common';
 import { Product } from './product.model';
 import { ProductsService } from './products.service';
 
@@ -8,18 +8,19 @@ export class ProductsController {
   constructor(private productsService: ProductsService) {}
 
   @Get()
-  async getAll(): Promise<Product[]> {
-    return this.productsService.getAll();
+  async getProducts(@Query() query: { filter: string; categoryId: number }) {
+    if (query.categoryId) {
+      return this.productsService.getByCategory(query.categoryId);
+    } else if (query.filter) {
+      return this.productsService.getByFilter(query.filter);
+    } else {
+      return this.productsService.getAll();
+    }
   }
 
   @Get(':id')
-  async getOne(@Param() params): Promise<Product> {
-    return this.productsService.getOne(params.id);
-  }
-
-  @Get(':category')
-  async getByCategoryGroup(@Param() params): Promise<Product[]> {
-    return this.productsService.getByCategoryGroup(params.category);
+  async getOne(@Param('id') id: number): Promise<Product> {
+    return this.productsService.getOne(id);
   }
 
   @Post()

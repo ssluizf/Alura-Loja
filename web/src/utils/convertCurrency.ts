@@ -1,4 +1,4 @@
 const convertCurrency = (currency: number) =>
-  currency.toLocaleString("pt-br", { style: "currency", currency: "BRL" });
+  Number(currency).toLocaleString("pt-br", { style: "currency", currency: "BRL" });
 
 export default convertCurrency;

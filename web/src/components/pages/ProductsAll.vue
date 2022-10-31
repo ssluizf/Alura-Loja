@@ -5,13 +5,14 @@
         <p class="font-bold text-2xl text-black mb-4 md:mb-0">Todos os produtos</p>
         <ButtonDefault label="Adicionar produto" to="/create" />
       </div>
-      <ProductList :filter="filter" editable showAll />
+      <ProductList editable showAll />
     </ContainerDefault>
   </MainApp>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { mapActions } from 'vuex'
 import ProductList from "../molecules/ProductList.vue"
 import MainApp from "../templates/MainApp.vue"
 import ContainerDefault from "../atoms/ContainerDefault.vue"
@@ -24,6 +25,10 @@ export default defineComponent({
       filter: (this.$route.query.searchTerm || "").toString()
     }
   },
+  mounted() {
+    this.fetchProducts(this.filter)
+  },
+  methods: mapActions(['fetchProducts']),
   components: {
     ProductList,
     ContainerDefault,

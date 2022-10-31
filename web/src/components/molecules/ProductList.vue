@@ -1,6 +1,6 @@
 <template>
   <div class="grid gap-4 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 lg:gap-y-16" :class="!showAll && 'list-container'">
-    <div v-for="product in getProducts(categoryId, filter)" :key="product.id">
+    <div v-for="product in getProducts(categoryId)" :key="product.id">
       <ProductCardEditable v-if="editable" :product="product" />
       <ProductCard v-else :product="product" />
     </div>
@@ -15,15 +15,15 @@ import ProductCardEditable from '../atoms/ProductCardEditable.vue'
 
 export default defineComponent({
   name: 'ProductList',
-  computed: mapGetters(['getProductsByCategoryId', 'getAllProducts']),
+  computed: mapGetters(['getProductByCategory']),
   methods: {
-    getProducts(categoryId: any, filter: any) {
+    getProducts(categoryId: any) {
       let products = [];
 
       if (categoryId) {
-        products = this.getProductsByCategoryId(categoryId)
+        products = this.getProductByCategory(categoryId)
       } else {
-        products = this.getAllProducts(filter)
+        products = this.$store.state.products
       }
 
       return products
@@ -33,10 +33,6 @@ export default defineComponent({
     categoryId: Number,
     editable: Boolean,
     showAll: Boolean,
-    filter: {
-      type: String,
-      default: ""
-    }
   },
   components: {
     ProductCard,

@@ -10,14 +10,18 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { mapActions } from 'vuex';
 import MainApp from '../templates/MainApp.vue';
 import Banner from '../molecules/Banner.vue';
 import bannerImage from "../../assets/mushroom.jpg";
-import categories from "../../mocks/categories.js";
 import ProductSection from '../organisms/ProductSection.vue';
 
 export default defineComponent({
   name: 'HomeView',
+  mounted() {
+    this.fetchCategories()
+    this.fetchProducts()
+  },
   data() {
     return {
       banner: {
@@ -26,9 +30,14 @@ export default defineComponent({
         btnLabel: "Ver Consoles",
         image: bannerImage,
       },
-      categories,
     }
   },
+  computed: {
+    categories() {
+      return this.$store.state.categories
+    }
+  },
+  methods: mapActions(['fetchCategories', 'fetchProducts']),
   components: {
     MainApp,
     Banner,

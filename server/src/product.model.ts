@@ -25,7 +25,7 @@ export class Product extends Model<Product> {
 
   
   @Column({
-    type: DataType.STRING(),
+    type: DataType.TEXT("long"),
     allowNull: true
   })
   imgUrl: string;

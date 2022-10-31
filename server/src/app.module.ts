@@ -8,17 +8,19 @@ import { ProductsService } from './products.service';
 import { CategoriesController } from './categories.controller';
 import { CategoriesService } from './categories.service';
 import { SequelizeModule } from '@nestjs/sequelize';
+import { ConfigModule } from '@nestjs/config'
 import { Product } from './product.model';
 import { Category } from './category.model';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     SequelizeModule.forRoot({
       dialect: 'mysql',
       host: 'localhost',
       port: 3306,
-      username: 'root',
-      password: 'P@ssw0rd',
+      username: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
       database: 'products',
       autoLoadModels: true,
       synchronize: true
