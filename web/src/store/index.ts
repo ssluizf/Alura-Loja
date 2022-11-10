@@ -1,26 +1,31 @@
-import { getProducts, getProductById, getProductByCategory, getProductByFilter } from './../providers/products.api';
-import { getCategories } from '../providers/categories.api';
+import {
+  getProducts,
+  getProductById,
+  getProductByCategory,
+  getProductByFilter,
+} from "./../providers/products.api";
+import { getCategories } from "../providers/categories.api";
 import { InjectionKey } from "vue";
 import { createStore, Store, useStore as baseUseStore } from "vuex";
-import groupBy from '../utils/groupBy';
+import groupBy from "../utils/groupBy";
 
 export interface CategoryType {
-  categoryId: number,
-  title: string,
+  categoryId: number;
+  title: string;
 }
 
 interface ProductType {
-  id: number,
-  title: string,
-  description: string,
-  price: string,
-  imgUrl?: string,
-  categoryId: number
+  id: number;
+  title: string;
+  description: string;
+  price: string;
+  imgUrl?: string;
+  categoryId: number;
 }
 export interface State {
   products: ProductType[];
   categories: CategoryType[];
-  product: ProductType | null
+  product: ProductType | null;
 }
 
 export const key: InjectionKey<Store<State>> = Symbol();
@@ -29,7 +34,7 @@ export const store = createStore<State>({
   state: {
     products: [],
     categories: [],
-    product: null
+    product: null,
   },
   getters: {
     getProductByCategory: (state) => (id: any) => {
@@ -37,31 +42,31 @@ export const store = createStore<State>({
     },
   },
   actions: {
-    async fetchCategories({ commit }) {      
+    async fetchCategories({ commit }) {
       const response = await getCategories();
 
-      commit('setCategories', response);
+      commit("setCategories", response);
     },
     async fetchProducts({ commit }, filter) {
       if (filter) {
         const response = await getProductByFilter(filter);
-        
-        commit('setProducts', response);
-      }
-      
-      const response = await getProducts();
 
-      commit('setProducts', response);
+        commit("setProducts", response);
+      } else {
+        const response = await getProducts();
+
+        commit("setProducts", response);
+      }
     },
     async fetchProductById({ commit }, id) {
-      const response = await getProductById(id)
+      const response = await getProductById(id);
 
-      commit('setProduct', response);
+      commit("setProduct", response);
     },
     async fetchProductByCategory({ commit }, categoryId) {
       const response = await getProductByCategory(categoryId);
 
-      commit('setProducts', response);
+      commit("setProducts", response);
     },
   },
   mutations: {
@@ -74,7 +79,7 @@ export const store = createStore<State>({
     setProduct: (state, product) => {
       state.product = product;
     },
-  }
+  },
 });
 
 export function useStore() {

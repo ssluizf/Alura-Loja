@@ -5,7 +5,7 @@
     </div>
     <p class="text-black text-sm">{{ product.title }}</p>
     <span class="text-black font-bold">{{ convertCurrency(product.price) }}</span>
-    <a class="text-blue text-sm font-bold" :href="'product/' + product.id">Ver produto</a>
+    <a class="text-blue text-sm font-bold" :href="'/product/' + product.id">Ver produto</a>
   </div>
 </template>
 

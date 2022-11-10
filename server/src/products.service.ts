@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+import { Op } from "sequelize";
 import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/sequelize";
 import { Product } from "./product.model";
@@ -25,7 +26,9 @@ export class ProductsService {
   async getByFilter(filter: string): Promise<Product[]> {
     return this.productModel.findAll({
       where: {
-        title: filter
+        title: {
+          [Op.like]: `%${filter}%`
+        }
       }
     });
   }
