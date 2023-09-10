@@ -1,5 +1,9 @@
 # Alura Challenge 5 º Edição
 
+<p align="center">
+  <img src="./readme/Gif Full.gif" />
+</p>
+
 ## Server
 Crie um arquivo .env seguindo o modelo .env.example na pasta server. Preenchendo os dados para o banco de dados.
 ```
